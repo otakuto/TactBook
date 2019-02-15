@@ -60,6 +60,10 @@ difference()
 
     translate([33, 10, 0])
     lcd_controller_switch_blank(t);
+
+    //power switch
+    translate([body_inner_size[1] - 221, 26, 0])
+    cylinder(t, m16_hole_r, m16_hole_r);
   }
 }
 
@@ -74,6 +78,9 @@ translate([0, -space * 6, 0])
 
     translate([63 + t, 87 + mother_margin[1] + t, 0])
     fan_guard_blank(t, 3, 44, 4, 4);
+
+    translate([(body_inner_size[0] / 2) - 40.5 + t, 16 + t, 0])
+    touchpad_D1_blank(t);
   }
 }
 
@@ -87,6 +94,10 @@ difference()
 
   translate([(body_outer_size[0] / 2) - 30, 10, 0])
   hdmi_type_a_port_blank(t);
+  
+  //kvm switch
+  translate([(body_inner_size[0] / 2) + 65, 10, 0])
+  cylinder(t, m12_hole_r, m12_hole_r);
 }
 
 translate([0, -space * 2, 0])
